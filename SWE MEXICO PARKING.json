@@ -1,0 +1,3274 @@
+{
+  "name": "NAME_ID",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -912,
+        -32
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "notesInFlow": false,
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ID",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": 6421787027,
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -160,
+        -16
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/park",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ID"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN PARK"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ID",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/cobrar",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "NAME_ID"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN COBRAR"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ID",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/caja",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN CAJA"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ID",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/lugares",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "NAME_ID"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN LUGARES"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ID",
+                    "leftValue": "={{ $('Telegram Trigger').item.json.message.photo }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN COBRAR FOTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ID",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "/precios",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN /precios"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        128,
+        -96
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.format('ddMMyyyyHHmmssms') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json['Precio Pension'] }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json['Precion Hora'] }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        704,
+        -48
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "url": "={{ \"https://quickchart.io/qr?text=\" + $json.IDUNICO + \"&size=800\" + \"&caption=\" + $json.IDUNICO + \"&captionFontSize=50\" }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        912,
+        -48
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "={{ $json.IDUNICO + \"\\n\" + $json.Fecha + \"\\n\" + $json.Hora + \"\\n\" }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        16
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdParking": "={{ $json.IDUNICO }}",
+            "IdChat": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+            "IdExacto": "={{ $('Edit Fields').item.json.IDUNICO + \"_\" + $('Telegram Trigger').item.json.message.from.id }}",
+            "Fecha Entrada": "={{ $('Edit Fields').item.json.Fecha }}",
+            "Hora Entrada": "={{ $('Edit Fields').item.json.Hora }}",
+            "Estatus": "2",
+            "Fecha": "={{ $now.format('dd-MM-yyyy') }}",
+            "Monto Dia": "={{ $json['Precio Pension'] }}",
+            "Monto Hora": "={{ $json['Precion Hora'] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdParking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdExacto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Dia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1120,
+        -112
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdChat",
+              "lookupValue": "={{ $json.message.from.id }}"
+            },
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        128
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtener todos los items\nconst items = $input.all();\n\n// Fisher-Yates shuffle (mezcla real)\nfor (let i = items.length - 1; i > 0; i--) {\n  const j = Math.floor(Math.random() * (i + 1));\n  [items[i], items[j]] = [items[j], items[i]];\n}\n\n// Transformar los datos\nreturn items.map(item => {\n  return {\n    json: {\n      pregunta: `Quieres cobrar este folio?`,\n      idrespuesta: item.json.IdParking,\n      row: item.json.row_number\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        128
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.pregunta }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.idrespuesta }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.idrespuesta + \"_\" + $('Telegram Trigger').item.json.message.from.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        784,
+        128
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "message": "={{ $json.pregunta + \"\\n\" + $json.idrespuesta }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1232,
+        144
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        992,
+        128
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ID",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1520,
+        144
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Loop Over Items').item.json.idrespuesta }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1728,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdParking": "={{ $json.IdQR }}",
+            "Fecha Salida": "={{ $json['Fecha Salida'] }}",
+            "Hora Salida": "={{ $json['Hora Salida'] }}",
+            "Estatus": "1",
+            "IdExacto": "={{ $('Edit Fields1').item.json.IdExact }}"
+          },
+          "matchingColumns": [
+            "IdExacto"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdParking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdExacto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Dia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1904,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdExacto",
+              "lookupValue": "={{ $json.IdParking + \"_\" + $('Telegram Trigger').item.json.message.from.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2080,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  const parseFecha = (fecha) => {\n    const [dia, mes, anio] = fecha.split(\"-\");\n    return new Date(anio, parseInt(mes)-1, dia);\n  };\n\n  const fechaEntrada = parseFecha(item.json[\"Fecha Entrada\"]);\n  const fechaSalida  = parseFecha(item.json[\"Fecha Salida\"]);\n\n  const precioHora = item.json[\"Monto Hora\"];\n  const precioDia  = item.json[\"Monto Dia\"];\n\n  let total = 0;\n\n  // Si la fecha de entrada y salida es la misma → cobrar por horas\n  if (fechaEntrada.getTime() === fechaSalida.getTime()) {\n    // Convertimos horas exactas\n    const parseFechaHora = (fecha, hora) => {\n      const [dia, mes, anio] = fecha.split(\"-\");\n      const [hrs, min, seg] = hora.split(\":\");\n      return new Date(anio, parseInt(mes)-1, dia, hrs, min, seg);\n    };\n\n    const entradaHora = parseFechaHora(item.json[\"Fecha Entrada\"], item.json[\"Hora Entrada\"]);\n    const salidaHora  = parseFechaHora(item.json[\"Fecha Salida\"], item.json[\"Hora Salida\"]);\n\n    const diffMs = salidaHora - entradaHora;\n    const diffHoras = diffMs / (1000 * 60 * 60);\n\n    total = Math.ceil(diffHoras) * precioHora;\n\n  } else {\n    // Fechas distintas → calcular días completos\n    const diffMs = fechaSalida - fechaEntrada;\n    const dias = Math.ceil(diffMs / (1000 * 60 * 60 * 24)); // diferencia en días\n    total = dias * precioDia;\n  }\n\n  return {\n    json: { total }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2256,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdExacto": "={{ $('Get row(s) in sheet1').item.json.IdParking + \"_\" + $('Get row(s) in sheet1').item.json.IdChat }}",
+            "Pago": "={{ $json.total }}"
+          },
+          "matchingColumns": [
+            "IdExacto"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdParking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdExacto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Dia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2432,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ \"Su pago es de: $\" + $('Code in JavaScript1').item.json.total }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2608,
+        160
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdChat",
+              "lookupValue": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+            },
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "1"
+            },
+            {
+              "lookupColumn": "Fecha Salida",
+              "lookupValue": "={{ $now.format('dd-MM-yyyy') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        352
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      ichat: $('Telegram Trigger').first().json.message.from.id,\n      totalRegistros: items.length, // cuenta cuántos registros hay\n      totalDinero: items.reduce((acc, item) => {\n        const monto = parseFloat(item.json[\"Pago\"] || 0); // usa la columna de dinero\n        return acc + monto;\n      }, 0)\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        352
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.ichat }}",
+        "text": "={{ \"Total Vehiculos: \" + $json.totalRegistros + \"\\nTotal Dinero: $\" + $json.totalDinero }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        784,
+        352
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdChat",
+              "lookupValue": "={{ $json.message.from.id }}"
+            },
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        528
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      ichat: $('Telegram Trigger').first().json.message.from.id,\n      totalRegistros: items.length\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        528
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.ichat }}",
+        "text": "={{ \"El total de lugares ocupados son: \" + $json.totalRegistros }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        784,
+        528
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger').item.json.message.photo[0].file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        368,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ \"http://api.qrserver.com/v1/read-qr-code/\" }}",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "NAME_ID",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        576,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.symbol[0].data }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.symbol[0].data + \"_\" + $('Telegram Trigger').item.json.message.from.id }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        784,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdParking": "={{ $json.QR }}",
+            "Fecha Salida": "={{ $json['Fecha Salida'] }}",
+            "Hora Salida": "={{ $json['Hora Salida'] }}",
+            "Estatus": "1",
+            "IdExacto": "={{ $json.IDUNICO }}"
+          },
+          "matchingColumns": [
+            "IdExacto"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdParking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdExacto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Dia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        992,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdExacto",
+              "lookupValue": "={{ $json.IdParking + \"_\" + $('Telegram Trigger').item.json.message.from.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1184,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return items.map(item => {\n  const parseFecha = (fecha) => {\n    const [dia, mes, anio] = fecha.split(\"-\");\n    return new Date(anio, parseInt(mes)-1, dia);\n  };\n\n  const fechaEntrada = parseFecha(item.json[\"Fecha Entrada\"]);\n  const fechaSalida  = parseFecha(item.json[\"Fecha Salida\"]);\n\n  const precioHora = item.json[\"Monto Hora\"];\n  const precioDia  = item.json[\"Monto Dia\"];\n\n  let total = 0;\n\n  // Si la fecha de entrada y salida es la misma → cobrar por horas\n  if (fechaEntrada.getTime() === fechaSalida.getTime()) {\n    // Convertimos horas exactas\n    const parseFechaHora = (fecha, hora) => {\n      const [dia, mes, anio] = fecha.split(\"-\");\n      const [hrs, min, seg] = hora.split(\":\");\n      return new Date(anio, parseInt(mes)-1, dia, hrs, min, seg);\n    };\n\n    const entradaHora = parseFechaHora(item.json[\"Fecha Entrada\"], item.json[\"Hora Entrada\"]);\n    const salidaHora  = parseFechaHora(item.json[\"Fecha Salida\"], item.json[\"Hora Salida\"]);\n\n    const diffMs = salidaHora - entradaHora;\n    const diffHoras = diffMs / (1000 * 60 * 60);\n\n    total = Math.ceil(diffHoras) * precioHora;\n\n  } else {\n    // Fechas distintas → calcular días completos\n    const diffMs = fechaSalida - fechaEntrada;\n    const dias = Math.ceil(diffMs / (1000 * 60 * 60 * 24)); // diferencia en días\n    total = dias * precioDia;\n  }\n\n  return {\n    json: { total }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1392,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1443250034,
+          "mode": "list",
+          "cachedResultName": "PARKING NEW",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdExacto": "={{ $('Get row(s) in sheet4').item.json.IdExacto }}",
+            "Pago": "={{ $json.total }}"
+          },
+          "matchingColumns": [
+            "IdExacto"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdParking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "IdExacto",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Entrada",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Hora Salida",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Dia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Monto Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Pago",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1568,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ \"Su pago es de: $\" + $('Code in JavaScript4').item.json.total }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1744,
+        736
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "No cuentas con licencia activa",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "SOLICITALA AQUI",
+                    "additionalFields": {
+                      "url": "https://t.me/SWEMEXICO"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        240
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdChat",
+              "lookupValue": "={{ $json.message.from.id }}"
+            },
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -512,
+        -16
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdChat": "={{ $('Edit Fields4').item.json.message.from.id }}",
+            "Estatus": "2",
+            "Fecha": "={{ $now.format('dd-MM-yyyy') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Inicio Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Termino Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Precio Pension",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Precion Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        144,
+        240
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.row_number }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -352,
+        -16
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ID",
+              "leftValue": "={{ $json.message.from.id }}",
+              "rightValue": 6421787027,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -704,
+        -32
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "LICENCIAS",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "ID"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "MSN LICENCIAS"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -576,
+        -288
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "message": "={{ \"Aprovar licencia: \" + $json.IdChat }}",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        16,
+        -272
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -384,
+        -288
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -176,
+        -288
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.data.approved }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        -272
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "ID",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        432,
+        -272
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.plus({ days: 2 }).format('dd-MM-yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $now.plus({ days: 2, years: 1 }).format('dd-MM-yyyy') }}",
+              "type": "string"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Get row(s) in sheet6').item.json.IdChat }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        656,
+        -256
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdChat": "={{ $json.IdChat }}",
+            "Fecha Inicio Licencia": "={{ $json['Fecha Inicio Licencia'] }}",
+            "Fecha Termino Licencia": "={{ $json['Fecha Termino Licencia'] }}",
+            "Estatus": "1"
+          },
+          "matchingColumns": [
+            "IdChat"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Inicio Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Termino Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        912,
+        -256
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+        "text": "={{ \"Se ha activo la licencia\\n\" + $('Edit Fields6').item.json['Fecha Inicio Licencia'] + \"\\n\" + $('Edit Fields6').item.json['Fecha Termino Licencia'] }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        -256
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "chatId": "={{ $json.message.from.id }}",
+        "message": "Agrega los precios",
+        "responseType": "customForm",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Precio Pensión",
+              "fieldType": "number",
+              "placeholder": "40",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Precio Hora",
+              "fieldType": "number",
+              "placeholder": "15",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        368,
+        928
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.data['Precio Pensión'] }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $json.data['Precio Hora'] }}",
+              "type": "number"
+            },
+            {
+              "id": "ID",
+              "name": "NAME_ID",
+              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        928
+      ],
+      "id": "ID",
+      "name": "NAME_ID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "IdChat": "={{ $json.message.from.id }}",
+            "Precio Pension": "={{ $json.data['Precio Pensión'] }}",
+            "Precion Hora": "={{ $json.data['Precio Hora'] }}"
+          },
+          "matchingColumns": [
+            "IdChat"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "IdChat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Inicio Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha Termino Licencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Precio Pension",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Precion Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Estatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        784,
+        928
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.IdChat }}",
+        "text": "={{ \"Se han actualizado los precios:\\nPrecio Pensión: $\" + $json['Precio Pension'] + \"\\nPrecio Hora: $\" + $json['Precion Hora'] }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        992,
+        928
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "webhookId": "ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "mode": "list",
+          "cachedResultName": "SWE MEXICO PARKING",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1729588317,
+          "mode": "list",
+          "cachedResultName": "LICENCIAS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "IdChat",
+              "lookupValue": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+            },
+            {
+              "lookupColumn": "Estatus",
+              "lookupValue": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        432,
+        -48
+      ],
+      "id": "ID",
+      "name": "NAME_ID",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ID",
+          "name": "NAME_ID"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send message and wait for response2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a photo message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Send message and wait for response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet3": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet3": {
+      "main": [
+        [
+          {
+            "node": "Send a text message3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet4": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet5": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message4": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get row(s) in sheet5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet6": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Send message and wait for response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet4": {
+      "main": [
+        [
+          {
+            "node": "Send a text message5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message and wait for response2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet5": {
+      "main": [
+        [
+          {
+            "node": "Send a text message6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet7": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "7a22d71b-c20a-424b-a19e-e58a4a3b0eee",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bc69de034aefdaf1cb785c379eee6b4819dbb0c115e7722072e64067f218ad9a"
+  },
+  "id": "ID",
+  "tags": []
+}
