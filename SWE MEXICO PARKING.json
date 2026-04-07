@@ -30,14 +30,14 @@
         "conditions": {
           "options": {
             "caseSensitive": true,
-            "leftValue": "",
+            "leftvalue": "URL_ID",
             "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
             {
               "id": "ID",
-              "leftValue": "={{ $json.row_number }}",
+              "leftvalue": "URL_ID",
               "rightValue": 6421787027,
               "operator": {
                 "type": "number",
@@ -67,14 +67,14 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "/park",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals"
@@ -91,15 +91,15 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
                     "id": "ID",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "/cobrar",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -116,15 +116,15 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
                     "id": "ID",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "/caja",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals"
@@ -140,15 +140,15 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
                     "id": "ID",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "/lugares",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -165,15 +165,15 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
                     "id": "ID",
-                    "leftValue": "={{ $('Telegram Trigger').item.json.message.photo }}",
-                    "rightValue": "",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "array",
                       "operation": "exists",
@@ -190,15 +190,15 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
                     "id": "ID",
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "/precios",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals"
@@ -230,31 +230,31 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.format('ddMMyyyyHHmmssms') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "value": "URL_ID"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json['Precio Pension'] }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json['Precion Hora'] }}",
+              "value": "URL_ID",
               "type": "number"
             }
           ]
@@ -320,17 +320,17 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -484,27 +484,27 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdChat",
-              "lookupValue": "={{ $json.message.from.id }}"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "2"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
@@ -546,19 +546,19 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.pregunta }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.idrespuesta }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.idrespuesta + \"_\" + $('Telegram Trigger').item.json.message.from.id }}",
+              "value": "URL_ID"_\" + $('Telegram Trigger').item.json.message.from.id }}",
               "type": "string"
             }
           ]
@@ -622,14 +622,14 @@
         "conditions": {
           "options": {
             "caseSensitive": true,
-            "leftValue": "",
+            "leftvalue": "URL_ID",
             "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
             {
               "id": "ID",
-              "leftValue": "={{ $json.data.approved }}",
+              "leftvalue": "URL_ID",
               "rightValue": false,
               "operator": {
                 "type": "boolean",
@@ -657,25 +657,25 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Loop Over Items').item.json.idrespuesta }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "value": "URL_ID"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
               "type": "string"
             }
           ]
@@ -696,17 +696,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -875,23 +875,23 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdExacto",
-              "lookupValue": "={{ $json.IdParking + \"_\" + $('Telegram Trigger').item.json.message.from.id }}"
+              "lookupvalue": "URL_ID"_\" + $('Telegram Trigger').item.json.message.from.id }}"
             }
           ]
         },
@@ -930,17 +930,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1131,31 +1131,31 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdChat",
-              "lookupValue": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "1"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Fecha Salida",
-              "lookupValue": "={{ $now.format('dd-MM-yyyy') }}"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
@@ -1217,27 +1217,27 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdChat",
-              "lookupValue": "={{ $json.message.from.id }}"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "2"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
@@ -1350,25 +1350,25 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.symbol[0].data }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.symbol[0].data + \"_\" + $('Telegram Trigger').item.json.message.from.id }}",
+              "value": "URL_ID"_\" + $('Telegram Trigger').item.json.message.from.id }}",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.format('dd-MM-yyyy') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ new Date().toLocaleTimeString(\"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
+              "value": "URL_ID"es-MX\", { timeZone: \"America/Mexico_City\", hour12: false }) }}",
               "type": "string"
             }
           ]
@@ -1389,17 +1389,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1568,23 +1568,23 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdExacto",
-              "lookupValue": "={{ $json.IdParking + \"_\" + $('Telegram Trigger').item.json.message.from.id }}"
+              "lookupvalue": "URL_ID"_\" + $('Telegram Trigger').item.json.message.from.id }}"
             }
           ]
         },
@@ -1623,17 +1623,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1443250034,
           "mode": "list",
           "cachedResultName": "PARKING NEW",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1443250034"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1865,27 +1865,27 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdChat",
-              "lookupValue": "={{ $json.message.from.id }}"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "1"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
@@ -1912,17 +1912,17 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -2028,19 +2028,19 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.row_number }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Telegram Trigger').item.json.message.text }}",
+              "value": "URL_ID",
               "type": "string"
             }
           ]
@@ -2061,14 +2061,14 @@
         "conditions": {
           "options": {
             "caseSensitive": true,
-            "leftValue": "",
+            "leftvalue": "URL_ID",
             "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
             {
               "id": "ID",
-              "leftValue": "={{ $json.message.from.id }}",
+              "leftvalue": "URL_ID",
               "rightValue": 6421787027,
               "operator": {
                 "type": "number",
@@ -2097,14 +2097,14 @@
               "conditions": {
                 "options": {
                   "caseSensitive": true,
-                  "leftValue": "",
+                  "leftvalue": "URL_ID",
                   "typeValidation": "strict",
                   "version": 3
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.message.text }}",
-                    "rightValue": "LICENCIAS",
+                    "leftvalue": "URL_ID",
+                    "rightvalue": "URL_ID",
                     "operator": {
                       "type": "string",
                       "operation": "equals"
@@ -2164,23 +2164,23 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "2"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
@@ -2221,7 +2221,7 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.data.approved }}",
+              "value": "URL_ID",
               "type": "boolean"
             }
           ]
@@ -2242,14 +2242,14 @@
         "conditions": {
           "options": {
             "caseSensitive": true,
-            "leftValue": "",
+            "leftvalue": "URL_ID",
             "typeValidation": "strict",
             "version": 3
           },
           "conditions": [
             {
               "id": "ID",
-              "leftValue": "={{ $json.data.approved }}",
+              "leftvalue": "URL_ID",
               "rightValue": false,
               "operator": {
                 "type": "boolean",
@@ -2277,19 +2277,19 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.plus({ days: 2 }).format('dd-MM-yyyy') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $now.plus({ days: 2, years: 1 }).format('dd-MM-yyyy') }}",
+              "value": "URL_ID",
               "type": "string"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Get row(s) in sheet6').item.json.IdChat }}",
+              "value": "URL_ID",
               "type": "number"
             }
           ]
@@ -2310,17 +2310,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -2488,19 +2488,19 @@
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.data['Precio Pensión'] }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $json.data['Precio Hora'] }}",
+              "value": "URL_ID",
               "type": "number"
             },
             {
               "id": "ID",
               "name": "NAME_ID",
-              "value": "={{ $('Telegram Trigger').item.json.message.from.id }}",
+              "value": "URL_ID",
               "type": "number"
             }
           ]
@@ -2521,17 +2521,17 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -2672,27 +2672,27 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390",
+          "value": "URL_ID",
           "mode": "list",
           "cachedResultName": "SWE MEXICO PARKING",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit?usp=drivesdk"
+          "cachedResultUrl": "URL_ID"
         },
         "sheetName": {
           "__rl": true,
           "value": 1729588317,
           "mode": "list",
           "cachedResultName": "LICENCIAS",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JyxOvA4xUG_Cj4xzs6pwk9-1mlwMFWy0oa3pwoD_390/edit#gid=1729588317"
+          "cachedResultUrl": "URL_ID"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "IdChat",
-              "lookupValue": "={{ $('Telegram Trigger').item.json.message.from.id }}"
+              "lookupvalue": "URL_ID"
             },
             {
               "lookupColumn": "Estatus",
-              "lookupValue": "1"
+              "lookupvalue": "URL_ID"
             }
           ]
         },
