@@ -27,10 +27,6 @@ Sistema automatizado de control de acceso para estacionamiento utilizando n8n, T
 4. Se almacena en Google Sheets
 5. Se valida acceso
 
-## 📸 Evidencia
-
-Ver carpeta `/screenshots`
-
 ## 💼 Valor
 
 Proyecto enfocado en automatización de procesos reales y control de accesos digitales.
