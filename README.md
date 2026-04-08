@@ -36,3 +36,5 @@ Ver carpeta `/screenshots`
 Proyecto enfocado en automatización de procesos reales y control de accesos digitales.
 
 ---
+LINK DE USO
+https://t.me/SWE_MEXICO_PARKING_bot
